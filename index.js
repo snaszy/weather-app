@@ -8,7 +8,7 @@ const img = document.querySelector('img');
 
 const fetchWeather = async (city) => {
     try {
-        const response = await fetch(`http://api.openweathermap.org/data/2.5/weather?q=${city}&APPID=d396e732e26fc8250e814ba390886903`, {mode: 'cors'})
+        const response = await fetch(`https://api.openweathermap.org/data/2.5/weather?q=${city}&APPID=d396e732e26fc8250e814ba390886903`, {mode: 'cors'})
         const responseWeather = await response.json();
         
         console.log(responseWeather);
@@ -44,7 +44,7 @@ const updateDOM = (information) => {
     station.textContent = information.city;
     temperature.textContent = chooseConversion(information.temp);
     weather.textContent = information.sky;
-    img.src = `http://openweathermap.org/img/wn/${information.image}@2x.png`;
+    img.src = `https://openweathermap.org/img/wn/${information.image}@2x.png`;
 }
 
 const convertKtoF = (number) => {
